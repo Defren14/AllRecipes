@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="app-footer">
       <div className="footer-content">
-        <p className="footer-text">All Recipes © 2025</p>
+        <p className="footer-text">All Recipes © 2026</p>
       </div>
     </footer>
   );
