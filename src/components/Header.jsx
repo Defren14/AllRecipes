@@ -289,6 +289,22 @@ const getLocalStorageUser = () => {
               </svg>
             </div>
           </Link>
+          {/* Recently Viewed */}
+          <Link 
+            to="/recently-viewed" 
+            className="nav-link recently-viewed-link"
+          >
+            <span className="viewed-text">Recently Viewed</span>
+            <div className="viewed-icon">
+              <svg 
+                viewBox="0 0 24 24" 
+                fill="currentColor" 
+                className="viewed-icon"
+              >
+                <path d=""/>
+              </svg>
+            </div>
+          </Link>
         </nav>
         
         {/* Theme toggle */}

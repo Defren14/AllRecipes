@@ -9,6 +9,7 @@ import Recipe from "./Recipe";
 import AuthPage from "./AuthPage";
 import MyFavorites from "./MyFavorites";
 import MyReviews from "./MyReviews";
+import RecentlyViewed from "./RecentlyViewed";
 import Category from "../components/Category";
 import Search from "../components/Search";
 import Header from "../components/Header";
@@ -45,6 +46,9 @@ const Pages = () => {
 
                         {/* MY REVIEWS ROUTE */}
                         <Route path="/my-reviews" element={<MyReviews />} />
+
+                        {/* MY REVIEWS ROUTE */}
+                        <Route path="/recently-viewed" element={<RecentlyViewed />} />
 
                     </Routes>
                 </div>
