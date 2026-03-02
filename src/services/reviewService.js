@@ -188,7 +188,7 @@ export const reviewService = {
 
   // Get reviews for a specific recipe
   getRecipeReviews: (recipeId, callback) => {
-    console.log('Setting up listener for recipeId:', recipeId);
+    //console.log('Setting up listener for recipeId:', recipeId);
     
     const reviewsRef = collection(db, 'reviews');
 

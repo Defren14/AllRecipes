@@ -8,6 +8,7 @@ import FavoriteButton from '../components/FavoriteButton';
 import ReviewSection from '../components/reviews/ReviewSection';
 
 const Recipe = () => {
+    
     const [details, setDetails] = useState();
     const [active, setActive] = useState('summary');
     const [user, setUser] = useState(null);
@@ -16,6 +17,7 @@ const Recipe = () => {
     const API_KEY = import.meta.env.VITE_RECIPE_API_KEY;
 
     const getLocalStorageUser = () => {
+        
         try {
             const userData = localStorage.getItem('allRecipesUser');
             if (userData) {
@@ -47,7 +49,17 @@ const Recipe = () => {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => {        
+        let recStorage = localStorage.getItem('recentlyViewed');    // Get recently viewed from localStorage
+        recStorage = params.name + ',' + recStorage;    // Add recipe to start of list
+
+        if (recStorage.length >= 71) {
+            recStorage = recStorage.substring(0, 69);   // Limit to 10 recipes
+        }
+
+        localStorage.setItem('recentlyViewed', recStorage);
+        console.log(`Local recently viewed history: ${recStorage}`);
+
         fetchDetails();
         
         const currentUser = getLocalStorageUser();

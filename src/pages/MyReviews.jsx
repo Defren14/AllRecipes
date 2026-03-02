@@ -19,6 +19,7 @@ const MyReviews = () => {
 
   // Get user from localStorage
   const getLocalStorageUser = () => {
+    console.log("TEST3")
     try {
       const userData = localStorage.getItem('allRecipesUser');
       if (userData) {

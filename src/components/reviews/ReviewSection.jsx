@@ -24,7 +24,7 @@ const ReviewSection = ({ recipe, user }) => {
       return;
     }
 
-    console.log('🔍 Setting up review listener for recipe:', recipe.id);
+    //console.log('🔍 Setting up review listener for recipe:', recipe.id);
 
     // Set up real-time listener for reviews
     const unsubscribe = reviewService.getRecipeReviews(
@@ -78,7 +78,7 @@ const ReviewSection = ({ recipe, user }) => {
     );
 
     return () => {
-      console.log('🧹 Cleaning up review listener for recipe:', recipe.id);
+      //console.log('🧹 Cleaning up review listener for recipe:', recipe.id);
       if (unsubscribe) unsubscribe();
     };
   }, [recipe?.id, user]);
