@@ -1,3 +1,70 @@
-/* AllRecipes/src/pages/MyFavorites.css */
+.recently-viewed-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-/* My Favorites Container */
+.recently-viewed-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+}
+
+.recently-viewed-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.recently-viewed-header p {
+  margin: 4px 0;
+  color: #444;
+}
+
+.recently-viewed-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.recently-viewed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.recently-viewed-empty,
+.recently-viewed-error {
+  margin: 24px 0;
+  text-align: center;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.recently-viewed-empty a {
+  margin-top: 8px;
+  display: inline-block;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.loading-card {
+  height: 180px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-weight: 500;
+}
+

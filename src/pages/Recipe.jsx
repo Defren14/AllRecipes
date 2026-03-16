@@ -40,8 +40,19 @@ const Recipe = () => {
         }
 
         try {
-            const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${API_KEY}`);
-            const detailsData = await data.json();
+            const response = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${API_KEY}`);
+            if (response.status === 402) {
+                console.error('API quota hit for the day');
+                setDetails({ title: 'Quota exceeded', summary: 'Please try again tomorrow.', instructions: '' });
+                return;
+            }
+
+            if (!response.ok) {
+                console.error('Error fetching recipe details:', response.statusText);
+                return;
+            }
+
+            const detailsData = await response.json();
             console.log(detailsData);
             setDetails(detailsData);
         } catch (error) {
