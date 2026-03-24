@@ -29,7 +29,7 @@ const RecentlyViewed = () => {
     //  be stored in the format of 'xxxxxx,xxxxxx,xxxxxx ...', where index 0 of that string is the 6
     //  digit recipe id of the most recently viewed recipe.
     //
-    //  Above is a function to decode recently viewed recipes from localStorage.
+    //  Above is a function to decode recently viewed recipes from localStorage
 
     const fetchRecipeDetails = async () => {
         setLoading(true);
