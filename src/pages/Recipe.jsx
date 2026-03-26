@@ -61,7 +61,7 @@ const Recipe = () => {
     }
 
     useEffect(() => {        
-        let recStorage = localStorage.getItem('recentlyViewed');    // Get recently viewed from localStorage
+        let recStorage = localStorage.getItem('recentlyViewed') || '';
         recStorage = params.name + ',' + recStorage;    // Add recipe to start of list
 
         if (recStorage.length >= 71) {
@@ -96,7 +96,7 @@ const Recipe = () => {
 useEffect(() => {
     if (!details) return;
 
-    const stored = JSON.parse(localStorage.getItem('recentRecipes')) || [];
+    const stored = JSON.parse(localStorage.getItem('recentRecipes') || '[]');
 
     const updated = [
         {
