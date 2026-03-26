@@ -91,6 +91,26 @@ const Recipe = () => {
         };
     }, [params.name]);
 
+    // kobra's code 
+
+useEffect(() => {
+    if (!details) return;
+
+    const stored = JSON.parse(localStorage.getItem('recentRecipes')) || [];
+
+    const updated = [
+        {
+            id: details.id,
+            title: details.title,
+            image: details.image,
+        },
+        ...stored.filter((recipe) => recipe.id !== details.id),
+    ].slice(0, 10);
+
+    localStorage.setItem('recentRecipes', JSON.stringify(updated));
+}, [details]);
+
+//end the code 
     const handleClick = (status) => {
         setActive(status)
     }

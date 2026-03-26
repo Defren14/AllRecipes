@@ -38,7 +38,20 @@ const loadFirebaseConfig = () => {
     }
   }
 
-  throw new Error('Firebase configuration not found');
+    const missingMessage = `Firebase configuration not found.\n\n` +
+      `Please provide your Firebase config via Vite environment variables (recommended) or ` +
+      `other supported methods. Create a file named .env.local in the project root with the following entries (replace the placeholders):\n\n` +
+      `VITE_FIREBASE_API_KEY=your_api_key\n` +
+      `VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain\n` +
+      `VITE_FIREBASE_PROJECT_ID=your_project_id\n` +
+      `VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket\n` +
+      `VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id\n` +
+      `VITE_FIREBASE_APP_ID=your_app_id\n` +
+      `VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id\n\n` +
+      `After adding the file, restart the dev server so Vite picks up the new variables.`;
+
+    console.error(missingMessage);
+    throw new Error(missingMessage);
 };
 
 const firebaseConfig = loadFirebaseConfig();
